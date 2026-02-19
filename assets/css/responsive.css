@@ -1,0 +1,43 @@
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    display: none;
+    padding: 24px 0;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    margin: 14px 0;
+    font-size: 15px;
+    text-align: center;
+  }
+    .about-inner {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .about-image-wrap .bg-block {
+    top: -20px;
+    right: -20px;
+  }
+
+  .about-title {
+    font-size: 22px;
+  }
+}
+
+

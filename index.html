@@ -4,38 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社スターシードプロダクション</title>
     <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Zen+Maru+Gothic&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>株式会社スターシードプロダクション|ロケーションサポーター|車両部・俳優募集</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 
 <body>
 
     <header class="header" id="header">
         <div class="container header-inner">
+
             <div class="logo">
-                <img src="./assets/img/index/logo_white.png" alt="Starseed Production Logo">
-                <span>株式会社スターシードプロダクション</span>
+                <a href="index.html" class="logo-link">
+                    <img src="./assets/img/index/logo_white.png" alt="logo">
+                    <span>株式会社スターシードプロダクション</span>
+                </a>
             </div>
 
-            <nav class="nav">
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="nav">
                 <a href="#">私たちについて</a>
                 <a href="#">会社概要</a>
                 <a href="#">事業案内</a>
                 <a href="#">採用情報</a>
                 <a href="#">お問い合わせ</a>
             </nav>
+
         </div>
     </header>
 
     <section class="hero">
+        <img src="./assets/img/index/intro_screen.png" alt="" class="hero-bg">
+
         <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <h1>映像と人をつなぐ、新しい力</h1>
             <p>ロケーションを支え、物語を動かす</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-inner">
+
+            <!-- left words -->
+            <div class="about-text">
+                <h2 class="subtitle about-title">
+                    <span class="bar"></span>
+                    私たちについて
+                </h2>
+
+                <p>
+                    当社ホームページをご覧いただき誠に有難うございます。
+                </p>
+                <p>
+                    当社は2025年7月25日に設立した、<br>
+                    ロケーションサポートを主軸とする新会社です。
+                </p>
+                <p>
+                    当社の考えるロケーションサポートとは、<br>
+                    主に各撮影チームがロケーション撮影に出る際のサポートを指し、<br>
+                    中でも車両部としての役割を主軸としています。
+                </p>
+                <p>
+                    Netflixなどの配信系映画・ドラマ、<br>
+                    各テレビ局制作のドラマ・CM、映画会社系作品などにおいて、<br>
+                    強いネットワークを活かした車両部業務を担当しています。
+                </p>
+                <p>
+                    新会社ならではの柔軟さを強みに、<br>
+                    新しい取り組みにも積極的に挑戦してまいります。
+
+                </p>
+                <p>
+                    どうぞ宜しくお願いします。
+                </p>
+
+            </div>
+
+            <!-- right img -->
+            <div class="about-image-wrap">
+                <div class="bg-block"></div>
+                <img src="./assets/img/index/intro_car.png" alt="about image">
+            </div>
+
         </div>
     </section>
 
