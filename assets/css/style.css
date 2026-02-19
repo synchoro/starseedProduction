@@ -121,6 +121,7 @@ html, body {
 
 /* 桌面端不需要 close */
 #nav .nav-close {
+    display: none;
   z-index: 3;
   pointer-events: auto;
 }
