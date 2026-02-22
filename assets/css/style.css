@@ -185,7 +185,7 @@ html, body {
 .about-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 14vw, 150px);
+  padding: 0 clamp(16px, 14vw, 160px);
 
   display: flex;
   justify-content: space-between;
@@ -259,17 +259,17 @@ html, body {
 ========================= */
 .company {
   background: #d5ecf1;
-  padding: clamp(72px, 10vh, 120px) 0;
+  padding-bottom: clamp(72px, 16vh, 160px) 0;
 }
 
 .company-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 14vw, 150px);
+  padding: 0 clamp(16px, 14vw, 160px);
 
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: clamp(24px, 4vw, 80px);
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(24px, 6vw, 80px);
 
   /* ✅ 关键：两列拉成同高度，左侧才能用剩余空间居中图片 */
   align-items: stretch;
@@ -339,7 +339,7 @@ html, body {
   display: grid;
   grid-template-columns: 180px 1fr;
   gap: 18px;
-  padding: 18px 0 6px;
+  padding: 18px 0 10px;
   border-bottom: 1px solid rgba(60, 80, 90, 0.35);
 }
 
@@ -360,4 +360,55 @@ html, body {
   letter-spacing: .06em;
   line-height: 1.9;
   font-size: clamp(12px, 1.05vw, 14px);
+}
+
+
+
+
+/* gallery-marquee */
+.gallery-marquee{
+  background:#d5ecf1;               /* 跟你页面底色一致 */
+  padding: 40px 0;
+}
+
+/* 可视窗口 */
+.marquee{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* 运动轨道：让它一直往左移动 */
+.marquee-track{
+  display: flex;
+  gap: clamp(18px, 3vw, 60px);
+  width: max-content;               /* 内容多长就多长 */
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+/* 图片风格（按你截图那种大块） */
+.marquee-track img{
+  height: clamp(160px, 18vw, 360px);
+  width: auto;
+  object-fit: cover;
+  border-radius: 2px;
+  flex-shrink: 0;                   /* 不要被压缩 */
+}
+
+/* 关键：移动 50%（因为我们复制了一份）就刚好对齐无缝 */
+@keyframes marquee{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* 悬停暂停（可选，很常用） */
+.marquee:hover .marquee-track{
+  animation-play-state: paused;
+}
+
+/* 减少动态偏好（可选） */
+@media (prefers-reduced-motion: reduce){
+  .marquee-track{ animation: none; }
 }
