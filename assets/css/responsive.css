@@ -243,3 +243,44 @@
     max-width: 320px;
   }
 }
+
+
+
+@media (max-width: 900px) {
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-item img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* 手机端：两列更稳（不挤爆） */
+@media (max-width: 900px){
+  .partners-grid{ grid-template-columns: repeat(2, 1fr); gap: 18px 26px; }
+  .partners-grid img{ max-width: 170px; max-height: 58px; }
+}
+
+@media (max-width: 520px){
+  .partners-grid{ grid-template-columns: 1fr; gap: 14px; }
+}
