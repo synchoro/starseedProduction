@@ -83,10 +83,6 @@ html, body {
   align-items: center;
 }
 
-#nav .nav-panel {
-  transition: opacity .35s ease, transform .35s ease;
-}
-
 .header-inner > .nav a {
   margin-left: clamp(14px, 2.4vw, 48px);
   font-size: clamp(11px, 1.05vw, 15px);
@@ -99,7 +95,7 @@ html, body {
   white-space: nowrap;
 }
 
-.nav a:hover {
+.header-inner > .nav a:hover {
   opacity: 1;
 }
 
@@ -119,11 +115,9 @@ html, body {
   background: #fff;
 }
 
-/* 桌面端不需要 close */
+/* desktop hide close */
 #nav .nav-close {
-    display: none;
-  z-index: 3;
-  pointer-events: auto;
+  display: none;
 }
 
 /* =========================
@@ -191,7 +185,7 @@ html, body {
 .about-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 14vw, 160px);
+  padding: 0 clamp(16px, 14vw, 150px);
 
   display: flex;
   justify-content: space-between;
@@ -252,10 +246,118 @@ html, body {
   max-width: 420px;
   aspect-ratio: 4 / 3;
   background: rgba(150, 180, 190, 0.35);
-
-  /* 你要的右上偏移 */
   top: -20px;
   right: -20px;
-
   z-index: 1;
+}
+
+/* =========================
+   Company Section (Desktop)
+   - 标题位置不动
+   - 图片+背景块：水平居中
+   - 并且以右侧表格为基准垂直居中（上下距离相等）
+========================= */
+.company {
+  background: #d5ecf1;
+  padding: clamp(72px, 10vh, 120px) 0;
+}
+
+.company-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 14vw, 150px);
+
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(24px, 4vw, 80px);
+
+  /* ✅ 关键：两列拉成同高度，左侧才能用剩余空间居中图片 */
+  align-items: stretch;
+}
+
+/* left column: title fixed + image centered in remaining space */
+.company-left {
+  display: grid;
+  grid-template-rows: auto 1fr; /* 标题 + 剩余空间 */
+  min-height: 0;
+}
+
+.company-title {
+  display: flex;
+  align-items: center;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 600;
+  margin-bottom: clamp(18px, 3vh, 32px);
+  color: #333;
+  align-self: start;
+}
+
+.company-title .bar {
+  width: 4px;
+  height: clamp(20px, 2.4vw, 28px);
+  background: #4a4a4a;
+  margin-right: 14px;
+}
+
+/* image wrap centered horizontally + vertically in remaining space */
+.company-image-wrap {
+  position: relative;
+  width: 80%;
+  max-width: 420px;
+
+  /* ✅ 水平居中 */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* ✅ 垂直居中（在剩余空间里） */
+  align-self: center;
+}
+
+.company-image-wrap img {
+  width: 100%;
+  /* aspect-ratio: 4 / 3; */
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+/* background block (offset) */
+.company-bg-block {
+  position: absolute;
+  inset: 0;
+  background: rgba(150, 180, 190, 0.35);
+  z-index: 1;
+  transform: translate(-22px, -22px);
+}
+
+/* right: dl table */
+.company-dl {
+  width: 100%;
+}
+
+.company-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  padding: 18px 0 6px;
+  border-bottom: 1px solid rgba(60, 80, 90, 0.35);
+}
+
+.company-row:last-child {
+  border-bottom: none;
+}
+
+.company-row dt {
+  font-weight: 700;
+  color: rgba(20, 40, 46, 0.85);
+  letter-spacing: .08em;
+  font-size: clamp(12px, 1.05vw, 14px);
+}
+
+.company-row dd {
+  margin: 0;
+  color: rgba(20, 40, 46, 0.85);
+  letter-spacing: .06em;
+  line-height: 1.9;
+  font-size: clamp(12px, 1.05vw, 14px);
 }

@@ -169,10 +169,11 @@
   .about-inner {
     flex-direction: column;
     gap: 40px;
-    padding: 0 clamp(14px, 4vw, 32px);
+    padding: 0 clamp(20px, 6vw, 40px);
   }
 
   .about-text {
+    padding-left: 6px;
     font-size: clamp(12px, 2.5vw, 14px);
     line-height: 1.9;
   }
@@ -209,5 +210,36 @@
   .about-image-wrap img,
   .about-image-wrap .bg-block {
     max-width: 280px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .company-inner {
+    grid-template-columns: 1fr;
+    padding: 0 clamp(20px, 6vw, 40px);
+  }
+
+  .company-image-wrap {
+    max-width: 420px;
+  }
+
+  .company-bg-block {
+    transform: translate(-20px, -20px);
+  }
+
+  .company-row {
+    grid-template-columns: 140px 1fr;
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .company-row {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .company-image-wrap {
+    max-width: 320px;
   }
 }
