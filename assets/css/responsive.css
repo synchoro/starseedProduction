@@ -236,7 +236,7 @@
 
 @media (max-width: 420px) {
   .company-row {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 90px 1fr;
   }
 
   .company-image-wrap {
