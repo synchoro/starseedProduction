@@ -337,7 +337,7 @@ html, body {
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 18px;
-  padding: 18px 0 10px;
+  padding: 18px 0 6px;
   border-bottom: 1px solid rgba(60, 80, 90, 0.35);
 }
 
@@ -684,7 +684,7 @@ justify-self: center;  /* 水平居中 */
   /* 👇 控制它在ドラマ结束附近 */
   top: 56%;
   transform: translateY(-50%);
-  width: clamp(130px, 14vw, 220px);
+  width: clamp(120px, 14vw, 220px);
   height: auto;
   pointer-events: none;
   z-index: 3;
@@ -699,7 +699,7 @@ justify-self: center;  /* 水平居中 */
   /* 👇 控制它在ドラマ结束附近 */
     bottom: 20%;
   transform: translateY(-50%);
-  width: clamp(130px, 14vw, 200px);
+  width: clamp(110px, 14vw, 200px);
   height: auto;
   pointer-events: none;
   z-index: 3;
@@ -713,8 +713,383 @@ justify-self: center;  /* 水平居中 */
   /* 👇 控制它在ドラマ结束附近 */
   bottom:-2%;
   transform: translateY(-50%);
-  width: clamp(130px, 14vw, 180px);
+  width: clamp(90px, 14vw, 180px);
   height: auto;
   pointer-events: none;
   z-index: 3;
 }
+
+
+
+
+/* =========================
+   Recruit Section
+========================= */
+
+.recruit{
+  background:#d5ecf1;
+  padding: clamp(80px,10vh,120px) 0;
+}
+
+.recruit__container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 clamp(20px,14vw,160px);
+}
+
+.recruit__title{
+  text-align:center;
+  font-size: clamp(22px,2.4vw,30px);
+  font-weight:600;
+  margin-bottom: clamp(40px,6vh,80px);
+  color:#333;
+}
+
+
+/* =========================
+   Layout
+========================= */
+
+.recruit-card{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: clamp(30px,9vw,110px);
+  margin-bottom: clamp(80px,10vh,140px);
+}
+
+.recruit-card--actor{
+  align-items:center;
+  text-align: center;
+  gap: clamp(20px,4vw,70px);
+}
+
+
+.recruit-heading-actor{
+    display: flex;
+  justify-content: center; /* 水平居中 */
+}
+
+
+/* =========================
+   Image block
+========================= */
+
+.recruit-media{
+  position:relative;
+  flex:1;
+  max-width:420px;
+}
+
+.recruit-media__img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  position:relative;
+  z-index:2;
+}
+
+.recruit-media__bg{
+  position:absolute;
+  width:100%;
+  aspect-ratio:4/3;
+  background: rgba(150,180,190,0.35);
+  top:-20px;
+  right:-20px;
+  z-index:1;
+}
+
+.recruit-media--right .recruit-media__bg{
+  left:-20px;
+  right:auto;
+  top:20px;
+}
+
+
+/* =========================
+   Content
+========================= */
+
+.recruit-content{
+  flex:1.5;
+  color:#4a4a4a;
+  font-size: clamp(13px,1.1vw,15px);
+  line-height:2;
+}
+
+.recruit-heading{
+  font-size: clamp(18px,2vw,24px);
+  margin-bottom:20px;
+  display:flex;
+  gap:10px;
+  font-weight:600;
+}
+
+.recruit-sub{
+  margin-bottom:20px;
+  opacity:.9;
+}
+
+.recruit-grid{
+  display:grid;
+  grid-template-columns: 200px 1fr;
+  gap:14px 20px;
+  padding:20px 0;
+  border-top:1px solid rgba(0,0,0,.1);
+  border-bottom:1px solid rgba(0,0,0,.1);
+  margin-bottom:24px;
+}
+
+.recruit-list{
+  display:grid;
+  grid-template-columns: 80px 1fr;
+  gap:10px 20px;
+  margin-bottom:20px;
+}
+
+.recruit-list ul{
+  padding-left:18px;
+}
+
+.recruit-list li{
+  margin-bottom:6px;
+}
+
+.recruit-note{
+  margin-bottom:20px;
+}
+
+.recruit-warn{
+  padding-left:18px;
+  margin-bottom:24px;
+}
+
+.recruit-warn li{
+  margin-bottom:6px;
+}
+
+
+/* =========================
+   Button – 黑灰 → 透明描边
+========================= */
+
+.recruit-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:12px 22px;
+  border-radius:999px;
+
+  background: rgba(40,40,40,.9);
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:.05em;
+
+  border:1px solid transparent;
+
+  transition:
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease;
+}
+
+/* 箭头默认白色 */
+.recruit-btn__icon img{
+  width:16px;
+  height:auto;
+  display:block;
+  filter: brightness(0) invert(1); /* 变白 */
+  transition: filter .35s ease;
+}
+
+/* =========================
+   hover 状态
+========================= */
+
+.recruit-btn:hover{
+  background: transparent;      /* 中间透明 */
+  color:#000;                   /* 文字变黑 */
+  border-color:#000;            /* 外框黑色 */
+}
+
+/* hover 时箭头变黑 */
+.recruit-btn:hover .recruit-btn__icon img{
+  filter: brightness(0);        /* 变黑 */
+}
+
+
+/* =========================
+   Car Decoration
+========================= */
+
+.recruit__car{
+  position:absolute;
+  left:-120px;
+  bottom:-90px;
+  width:clamp(150px,28vw,400px);
+  z-index:0;
+}
+
+
+
+
+/* =========================
+   Contact / Access
+========================= */
+
+.contact{
+  background:#d5ecf1;                 /* 外层浅蓝（按你网站） */
+  padding: clamp(80px,10vh,130px) 0;
+}
+
+.contact__container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 14vw, 160px);
+}
+
+/* 主卡片：#f5f5f5 + 80% 不透明度 */
+.contact-card{
+  background: rgba(245,245,245,0.8);
+  border-radius: 36px;
+  padding: clamp(34px, 4vw, 56px) clamp(22px, 4vw, 60px);
+}
+
+/* 标题 */
+.contact-title{
+  text-align:center;
+  font-size: clamp(22px,2.4vw,32px);
+  letter-spacing: .12em;
+  font-weight: 600;
+  color:#444;
+  margin-bottom: clamp(26px, 3vw, 42px);
+}
+
+.contact-title--sub{
+  margin-top: clamp(26px, 3vw, 40px);
+}
+
+/* 两行：左说明 + 右椭圆按钮 */
+.contact-row{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 18px 6px;
+}
+
+.contact-left{
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.contact-icon{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  opacity: .9;
+}
+
+.contact-label{
+  font-size: clamp(14px, 1.3vw, 18px);
+  letter-spacing: .06em;
+  color:#555;
+  white-space: nowrap;
+}
+
+/* =========================
+   Contact Pill（统一宽度版）
+========================= */
+
+.contact-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 300px;            /* 统一长度（比之前窄一点） */
+  max-width: 100%;         /* 手机防止溢出 */
+
+  padding: 12px 20px;      /* 稍微收紧一点 */
+  border-radius: 999px;
+
+  border: 1.5px solid rgba(40,40,40,.65); /* 细一点描边 */
+  background: rgba(255,255,255,.45);
+  color: #4a4a4a;
+
+  text-decoration: none;
+
+  font-size: clamp(16px, 1.8vw, 24px);
+  font-weight: 600;
+  letter-spacing: .06em;
+
+  transition:
+    transform .18s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+/* 不再需要 small 宽度差异 */
+.contact-pill--small{
+  font-size: clamp(13px, 1.3vw, 16px);
+  letter-spacing: .02em;
+}
+
+/* hover */
+.contact-pill:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.75);
+  border-color: rgba(40,40,40,.9);
+}
+
+
+
+/* 分割线 */
+.contact-divider{
+  border: 0;
+  height: 2px;
+  background: rgba(40,40,40,.6);
+  margin: 18px 0 10px;
+}
+
+/* Access 区域 */
+.access{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(26px, 4vw, 60px);
+  align-items:center;
+  padding-top: 18px;
+}
+
+.access-map{
+  border-radius: 14px;
+  overflow:hidden;
+}
+
+.access-map iframe{
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+
+.access-text{
+  color:#555;
+  letter-spacing: .08em;
+}
+
+.access-zip{
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.access-addr{
+  font-size: clamp(15px, 1.4vw, 20px);
+  line-height: 2;
+  font-weight: 600;
+}
+
