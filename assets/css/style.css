@@ -16,6 +16,7 @@ html, body {
   font-family: "Zen Maru Gothic","M PLUS Rounded 1c","Kiwi Maru","Noto Sans JP",sans-serif;
   height: 100%;
   background: #d5ecf1;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -28,6 +29,10 @@ html, body {
 #works,
 #contact{
   scroll-margin-top: 120px;
+}
+
+#recruit{
+  scroll-margin-top: 60px;
 }
 
 /* =========================
@@ -463,11 +468,10 @@ html, body {
   left: 50%;
   bottom: 2px;
   transform: translateX(-47%);
-  
-  width: 44px;             /*控制蓝线长度 */
-  height: 5px;             /* 控制粗细 */
-  background: #cfe8f2;     /* 淡蓝色 */
-  border-radius: 4px;      /* 圆角更柔和 */
+  width: 44px;
+  height: 5px;
+  background: #cfe8f2;
+  border-radius: 4px;
   z-index: -1;
 }
 
@@ -543,19 +547,19 @@ html, body {
 /* パートナー（取引企業） */
 .partners-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 三列 */
-  gap: 22px 34px; /* 行间距 / 列间距：想更紧凑就继续减 */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px 34px;
   align-items: center;
   justify-items: center;
   margin-top: 24px;
 }
 
 .partners-grid img{
-justify-self: center;  /* 水平居中 */
-  align-self: center;    /* 垂直居中 */
+justify-self: center;
+  align-self: center;
   width: 100%;
-  max-width: 180px;      /* 控制logo最大宽度 */
-  max-height: 64px;      /* 控制logo最大高度（紧凑关键） */
+  max-width: 180px;
+  max-height: 64px;
   height: auto;
   object-fit: contain;
   opacity: .85;
@@ -571,33 +575,23 @@ justify-self: center;  /* 水平居中 */
 }
 
 .partners-grid img.p-tvman{
-  width: auto;        /* 关键：不要再按 width:100% 撑 */
-  height: 78px;       /* 直接定高度，最稳 */
-  max-height: none;   /* 防止被 max-height 逻辑限制 */
-  max-width: 220px;   /* 可选：给个上限，避免太宽 */
+  width: auto;
+  height: 78px;
+  max-height: none;
+  max-width: 220px;
 }
 
 /* =========================
-   Works 背景（波浪 + 中间半透明底色）
-   - 波浪在上/下
-   - 中间底色只在两条波浪之间
+   Works background
 ========================= */
 .works{
   position: relative;
-  isolation: isolate;  /* 防止外层 stacking context 影响 z-index */
+  isolation: isolate; 
   overflow: visible;
-
-  /* 页面底色（波浪外面的区域） */
   background: #d5ecf1;
-
-  /* ✅ 统一控制波浪高度 */
   --wave-h: 180px;
-
-  /* ✅ 给上/下波浪留空间 */
   padding: var(--wave-h) 0;
 }
-
-/* ✅ 中间半透明底色：只铺中段（不覆盖波浪区） */
 .works::before{
   content: "";
   position: absolute;
@@ -644,12 +638,10 @@ justify-self: center;  /* 水平居中 */
 
 
 /* ======= decor ======== */
-
-/* 两个贴图共用 */
 .works-deco{
   position: absolute;
-  z-index: 5;                /* ✅ 在背景(波浪/底色)上，内容下也可以；想压内容上就更大 */
-  pointer-events: none;      /* ✅ 不影响点击/滚动 */
+  z-index: 5; 
+  pointer-events: none; 
   user-select: none;
   opacity: 0.95;
 }
@@ -663,18 +655,10 @@ justify-self: center;  /* 水平居中 */
 }
 
 
-/* 让 CM 组成为定位参考 */
-/* .works-group-cm, .works-group-drama{
-  position: relative;
-} */
-
-
 
 .deco-film1{
   position: absolute;
-  /* 👇 固定在屏幕右侧 */
   right: 0;
-  /* 👇 控制它在ドラマ结束附近 */
   top: 37%;
   transform: translateY(-50%);
   width: clamp(130px, 12vw, 230px);
@@ -686,9 +670,7 @@ justify-self: center;  /* 水平居中 */
 /* 放映机定位 */
 .deco-projector{
   position: absolute;
-  /* 👇 固定在屏幕右侧 */
   right: 0;
-  /* 👇 控制它在ドラマ结束附近 */
   top: 56%;
   transform: translateY(-50%);
   width: clamp(120px, 14vw, 220px);
@@ -701,9 +683,7 @@ justify-self: center;  /* 水平居中 */
 /* film2定位 */
 .deco-film2{
   position: absolute;
-  /* 👇 固定在屏幕右侧 */
   right: 0;
-  /* 👇 控制它在ドラマ结束附近 */
     bottom: 20%;
   transform: translateY(-50%);
   width: clamp(110px, 14vw, 200px);
@@ -715,9 +695,7 @@ justify-self: center;  /* 水平居中 */
 /* film3定位 */
 .deco-film3{
   position: absolute;
-  /* 👇 固定在屏幕右侧 */
   right: 0;
-  /* 👇 控制它在ドラマ结束附近 */
   bottom:-2%;
   transform: translateY(-50%);
   width: clamp(90px, 14vw, 180px);
@@ -770,6 +748,7 @@ justify-self: center;  /* 水平居中 */
   align-items:center;
   text-align: center;
   gap: clamp(20px,4vw,70px);
+  padding-top: 60px;
 }
 
 
@@ -878,7 +857,7 @@ justify-self: center;  /* 水平居中 */
 
 
 /* =========================
-   Button – 黑灰 → 透明描边
+   Button hover
 ========================= */
 
 .recruit-btn{
@@ -903,28 +882,27 @@ justify-self: center;  /* 水平居中 */
     border-color .35s ease;
 }
 
-/* 箭头默认白色 */
 .recruit-btn__icon img{
   width:16px;
   height:auto;
   display:block;
-  filter: brightness(0) invert(1); /* 变白 */
+  filter: brightness(0) invert(1); /* turn white */
   transition: filter .35s ease;
 }
 
 /* =========================
-   hover 状态
+   hover 
 ========================= */
 
 .recruit-btn:hover{
-  background: transparent;      /* 中间透明 */
-  color:#000;                   /* 文字变黑 */
-  border-color:#000;            /* 外框黑色 */
+  background: transparent;
+  color:#000;
+  border-color:#000;
 }
 
-/* hover 时箭头变黑 */
+/* hover arrow turn black */
 .recruit-btn:hover .recruit-btn__icon img{
-  filter: brightness(0);        /* 变黑 */
+  filter: brightness(0);
 }
 
 
@@ -958,14 +936,13 @@ justify-self: center;  /* 水平居中 */
   padding: 0 clamp(16px, 14vw, 160px);
 }
 
-/* 主卡片：#f5f5f5 + 80% 不透明度 */
 .contact-card{
   background: rgba(245,245,245,0.9);
   border-radius: 36px;
   padding: clamp(34px, 4vw, 56px) clamp(24px, 6vw, 68px);
 }
 
-/* 标题 */
+/* title */
 .contact-title{
   text-align:center;
   font-size: clamp(22px,2.4vw,32px);
@@ -987,21 +964,18 @@ justify-self: center;  /* 水平居中 */
   display:flex;
   align-items:center;
   justify-content: space-between;
-
   gap: clamp(14px, 2vw, 22px);
   padding: 18px 6px;
-
-  flex-wrap: nowrap; /* 默认保持左右 */
+  flex-wrap: nowrap;
 }
 
-/* 左侧 */
+/* left */
 .contact-left{
   display:flex;
   align-items:center;
   gap: clamp(12px, 1.6vw, 18px);
-
-  min-width: 0;          /* 允许内容收缩 */
-  flex: 1 1 auto;        /* 可伸缩 */
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .contact-icon{
@@ -1019,37 +993,30 @@ justify-self: center;  /* 水平居中 */
 
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;  /* 太窄自动省略 */
+  text-overflow: ellipsis;
 }
 
 
 /* =========================
-   Contact Pill（统一宽度）
+   Contact Pill
 ========================= */
 
 .contact-pill{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   flex: 0 0 auto;
-
-  width: clamp(260px, 28vw, 300px); /* 跟屏幕同比例缩小 */
+  width: clamp(260px, 28vw, 300px); 
   max-width: 100%;
-
   padding: 12px 18px;
   border-radius: 999px;
-
   border: 1.5px solid rgba(40,40,40,.65);
   background: rgba(255,255,255,.45);
   color: #4a4a4a;
-
   text-decoration: none;
-
   font-size: clamp(14px, 1.6vw, 22px);
   font-weight: 600;
   letter-spacing: .05em;
-
   transition:
     transform .18s ease,
     background .25s ease,
@@ -1070,9 +1037,7 @@ justify-self: center;  /* 水平居中 */
 
 
 
-
-
-/* 分割线 */
+/* 区切り線 */
 .contact-divider{
   border: 0;
   height: 2px;
@@ -1080,7 +1045,7 @@ justify-self: center;  /* 水平居中 */
   margin: 18px 0 10px;
 }
 
-/* Access 区域 */
+/* Access */
 .access{
   display:grid;
   grid-template-columns: 1.2fr 1fr;
@@ -1122,16 +1087,12 @@ justify-self: center;  /* 水平居中 */
 
 
 /* =========================
-   Footer（超紧凑版）
+   Footer
 ========================= */
 
 .footer{
   background: #f6f5ef;
-
-  /* 和上面 section 拉开距离 */
   margin-top: clamp(80px, 10vh, 140px);
-
-  /* 再压缩高度 */
   padding: clamp(24px, 3vh, 36px) 0 clamp(16px, 2vh, 24px);
 }
 
@@ -1142,14 +1103,14 @@ justify-self: center;  /* 水平居中 */
   text-align:center;
 }
 
-/* Logo 再小一点 */
+/* Logo */
 .footer-logo img{
   width: clamp(48px,4vw,60px);
   opacity:.9;
   margin-bottom: clamp(10px,1.5vh,14px);
 }
 
-/* 公司名更小更紧凑 */
+/* 会社名 */
 .footer-company{
   font-size: clamp(13px,1.3vw,16px);
   font-weight:600;
@@ -1169,10 +1130,7 @@ justify-self: center;  /* 水平居中 */
 .footer-sns img{
   width: clamp(18px,2vw,22px);
   height: auto;
-
-  /* 默认灰色 */
-  filter: grayscale(100%) brightness(0.45);
-
+  filter: grayscale(100%) brightness(0.45);  /* grey */
   transition:
     filter .35s ease,
     transform .25s ease;
@@ -1183,14 +1141,14 @@ justify-self: center;  /* 水平居中 */
   margin-top: 1.6px;
 }
 
-/* hover：变浅 + 上浮 */
+/* hover */
 .footer-sns a:hover img{
-  filter: grayscale(0%) brightness(1); /* 变浅 */
+  filter: grayscale(0%) brightness(1); /* 薄くなる */
   transform: translateY(-3px);
 }
 
 
-/* copyright 更小 */
+/* copyright */
 .footer-copy{
   font-size: clamp(9px,0.8vw,11px);
   letter-spacing:.05em;

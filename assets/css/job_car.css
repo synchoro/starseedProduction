@@ -12,6 +12,7 @@ html, body{
   font-family: "Zen Maru Gothic","M PLUS Rounded 1c","Kiwi Maru","Noto Sans JP",sans-serif;
   background:#d5ecf1;
   color:#4a4a4a;
+  scroll-behavior: smooth;
 }
 
 .container{
@@ -19,21 +20,18 @@ html, body{
   margin: 0 auto;
 }
 
-/* 让 fixed header 不压住内容 */
 body{
   padding-top: clamp(64px, 7vh, 88px);
 }
 
 /* =========================
-   Header（一直灰色玻璃背景）
+   Header
 ========================= */
 .header{
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-
-  /* ✅ 永久灰色玻璃背景 */
   background: rgba(0,0,0,0.45);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -133,15 +131,15 @@ body{
   bottom: 2px;
   transform: translateX(-47%);
   
-  width: 62px;             /*控制蓝线长度 */
-  height: 5px;             /* 控制粗细 */
-  background: #f7fdff;     /* 淡蓝色 */
-  border-radius: 4px;      /* 圆角更柔和 */
+  width: 62px;
+  height: 5px;
+  background: #f7fdff;
+  border-radius: 4px;
   z-index: -1;
 }
 
 /* =========================
-   Job body（内容左右对称，车不影响布局）
+   Job body
 ========================= */
 .job-body{
   padding-top: clamp(10px, 2vh, 20px);
@@ -150,7 +148,7 @@ body{
 .job-body__inner{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 20vw, 210px); /* ✅ 左右一样 */
+  padding: 0 clamp(20px, 20vw, 210px);
   position: relative;
 }
 
@@ -166,7 +164,7 @@ body{
   box-shadow: 0 12px 30px rgba(0,0,0,.06);
 
   position: relative;
-  z-index: 1; /* 卡片在上层 */
+  z-index: 1;
 }
 
 .job-card__content{
@@ -180,18 +178,17 @@ body{
   margin-bottom: clamp(18px, 2.4vh, 26px);
 }
 
-/* 装饰车：绝对定位，不参与布局，不影响左右间距 */
 .job-car{
   position:absolute;
   right: clamp(-30px, -2vw, -10px);
   bottom: clamp(-40px, -4vh, -10px);
   width: clamp(160px, 32vw, 410px);
   pointer-events:none;
-  z-index: 2; /* 在卡片下层（只做装饰） */
+  z-index: 2;
 }
 
 /* =========================
-   Footer（超紧凑版 + hover）
+   Footer
 ========================= */
 .footer{
   background: #f6f5ef;
