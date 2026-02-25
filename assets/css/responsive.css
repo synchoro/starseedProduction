@@ -357,44 +357,66 @@
 
 
 /* =========================
-   Mobile-contact
+   Mobile-contact（修正版）
+   - 960px: 仍保持左右布局，只缩小
+   - 680px: 才换成上下两行
 ========================= */
 
 @media (max-width: 960px){
+
+  /* ✅ 不要在这里改成 column！保持左右 */
   .contact-row{
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
     padding: 14px 0;
   }
 
+  /* 左边允许缩小并省略 */
+  .contact-left{ min-width: 0; }
   .contact-label{
-    white-space: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .contact-pill,
-  .contact-pill--small{
-    min-width: 0;
-    width: 100%;
-    text-align:center;
+  /* 右侧 pill 跟着缩小，但两条长度一致 */
+  .contact-pill{
+    width: clamp(240px, 34vw, 300px);
   }
 
+  /* access 还是可以在 960px 变一列 */
   .access{
     grid-template-columns: 1fr;
   }
-
   .access-map iframe{
     height: 240px;
   }
 }
 
+/* ✅ 真的太窄才换行 */
+@media (max-width: 680px){
+  .contact-row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+  }
 
-@media (max-width: 768px){
+  .contact-label{
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
   .contact-pill{
     width: 100%;
-    font-size: 16px;
+    text-align: center;
   }
 }
 
+/* 更小屏幕微调 */
 @media (max-width: 520px){
   .contact-card{
     border-radius: 26px;
