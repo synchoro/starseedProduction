@@ -129,7 +129,7 @@ sr.reveal(".job-car", {
     origin: "right",
     distance: "120px",
     duration: 1600,
-    delay: 2200
+    delay: 1800
 });
 
 

@@ -444,7 +444,7 @@ html, body {
 
 /* グループ */
 .works-group {
-  margin-bottom: 90px;
+  margin-bottom: 150px;
 }
 
 .works-group h3 {
@@ -453,6 +453,7 @@ html, body {
   margin-bottom: 40px;
   letter-spacing: .15em;
   color: rgba(20,40,46,.9);
+  margin-top: 30px;
 }
 
 
@@ -460,6 +461,7 @@ html, body {
 .section-sub{
   position: relative;
   z-index: 1;
+  margin-top: 50px;
 }
 
 .section-sub::after{
@@ -659,7 +661,7 @@ justify-self: center;
 .deco-film1{
   position: absolute;
   right: 0;
-  top: 37%;
+  top: 30%;
   transform: translateY(-50%);
   width: clamp(130px, 12vw, 230px);
   height: auto;
@@ -671,7 +673,7 @@ justify-self: center;
 .deco-projector{
   position: absolute;
   right: 0;
-  top: 56%;
+  top: 50%;
   transform: translateY(-50%);
   width: clamp(120px, 14vw, 220px);
   height: auto;
@@ -684,7 +686,7 @@ justify-self: center;
 .deco-film2{
   position: absolute;
   right: 0;
-    bottom: 20%;
+    bottom: 22%;
   transform: translateY(-50%);
   width: clamp(110px, 14vw, 200px);
   height: auto;
@@ -698,7 +700,7 @@ justify-self: center;
   right: 0;
   bottom:-2%;
   transform: translateY(-50%);
-  width: clamp(90px, 14vw, 180px);
+  width: clamp(90px, 11vw, 180px);
   height: auto;
   pointer-events: none;
   z-index: 3;
