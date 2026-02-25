@@ -1185,7 +1185,7 @@ justify-self: center;  /* 水平居中 */
 
 /* hover：变浅 + 上浮 */
 .footer-sns a:hover img{
-  filter: grayscale(0%) brightness(0.8); /* 变浅 */
+  filter: grayscale(0%) brightness(1); /* 变浅 */
   transform: translateY(-3px);
 }
 

@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+/* =========================
+   Reset
+========================= */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+/* =========================
+   Base
+========================= */
+html, body{
+  font-family: "Zen Maru Gothic","M PLUS Rounded 1c","Kiwi Maru","Noto Sans JP",sans-serif;
+  background:#d5ecf1;
+  color:#4a4a4a;
+}
+
+.container{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 让 fixed header 不压住内容 */
+body{
+  padding-top: clamp(64px, 7vh, 88px);
+}
+
+/* =========================
+   Header（一直灰色玻璃背景）
+========================= */
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  /* ✅ 永久灰色玻璃背景 */
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.header-inner{
+  height: clamp(64px, 7vh, 88px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 1vh clamp(32px, 4vw, 64px);
+  color:#fff;
+}
+
+/* logo */
+.logo{
+  display:flex;
+  align-items:center;
+  gap: clamp(8px, 1vw, 14px);
+}
+
+.logo-link{
+  display:flex;
+  align-items:center;
+  gap: clamp(8px, 1vw, 12px);
+  text-decoration:none;
+  color: inherit;
+}
+
+.logo img{
+  height: clamp(26px, 2.4vw, 46px);
+  width:auto;
+}
+
+.logo span{
+  font-size: clamp(11px, 1.1vw, 16px);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+/* nav */
+.nav{ display:flex; align-items:center; }
+.nav-panel{ display:flex; align-items:center; }
+
+.nav-panel a{
+  margin-left: clamp(14px, 2.4vw, 48px);
+  font-size: clamp(11px, 1.05vw, 15px);
+
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+
+  opacity:.75;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  transition: opacity .35s ease;
+  white-space:nowrap;
+}
+
+.nav-panel a:hover{
+  opacity: 1;
+}
+
+/* =========================
+   Job hero
+========================= */
+.job-hero{
+  padding: clamp(70px, 10vh, 110px) 0 clamp(28px, 4vh, 50px);
+}
+
+.job-hero__inner{
+    position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 14vw, 160px);
+  text-align:center;
+}
+
+.job-hero__title{
+  font-size: clamp(18px, 2.2vw, 30px);
+  font-weight: 600;
+  letter-spacing: .12em;
+  margin-bottom: clamp(14px, 2vh, 22px);
+}
+
+.job-hero__sub{
+  font-size: clamp(14px, 1.6vw, 20px);
+  font-weight: 600;
+  letter-spacing: .18em;
+  opacity:.95;
+}
+
+.job-hero__sub::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  transform: translateX(-47%);
+  
+  width: 62px;             /*控制蓝线长度 */
+  height: 5px;             /* 控制粗细 */
+  background: #f7fdff;     /* 淡蓝色 */
+  border-radius: 4px;      /* 圆角更柔和 */
+  z-index: -1;
+}
+
+/* =========================
+   Job body（内容左右对称，车不影响布局）
+========================= */
+.job-body{
+  padding-top: clamp(10px, 2vh, 20px);
+}
+
+.job-body__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 20vw, 210px); /* ✅ 左右一样 */
+  position: relative;
+}
+
+/* 卡片强制居中，不会被装饰图挤 */
+.job-card{
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+
+  background: rgba(245,245,245,0.9);
+  border-radius: 32px;
+  padding: clamp(50px, 4vw, 44px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+
+  position: relative;
+  z-index: 1; /* 卡片在上层 */
+}
+
+.job-card__content{
+  font-size: clamp(12px, 1.1vw, 15px);
+  line-height: 2.15;
+  letter-spacing: .08em;
+  font-size: clamp(12px, 1.1vw, 16px);
+}
+
+.job-card__content p{
+  margin-bottom: clamp(18px, 2.4vh, 26px);
+}
+
+/* 装饰车：绝对定位，不参与布局，不影响左右间距 */
+.job-car{
+  position:absolute;
+  right: clamp(-30px, -2vw, -10px);
+  bottom: clamp(-40px, -4vh, -10px);
+  width: clamp(160px, 32vw, 410px);
+  pointer-events:none;
+  z-index: 2; /* 在卡片下层（只做装饰） */
+}
+
+/* =========================
+   Footer（超紧凑版 + hover）
+========================= */
+.footer{
+  background: #f6f5ef;
+  margin-top: clamp(80px, 10vh, 140px);
+  padding: clamp(24px, 3vh, 36px) 0 clamp(16px, 2vh, 24px);
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 clamp(16px,14vw,160px);
+  text-align:center;
+}
+
+.footer-logo img{
+  width: clamp(48px,4vw,60px);
+  opacity:.9;
+  margin-bottom: clamp(10px,1.5vh,14px);
+}
+
+.footer-company{
+  font-size: clamp(13px,1.3vw,16px);
+  font-weight:600;
+  letter-spacing:.08em;
+  color:#444;
+  margin-bottom: clamp(12px,1.8vh,18px);
+}
+
+.footer-sns{
+  display:flex;
+  justify-content:center;
+  gap: clamp(16px,2.5vw,26px);
+  margin-bottom: clamp(12px,1.8vh,18px);
+}
+
+.footer-sns img{
+  width: clamp(18px,2vw,22px);
+  height:auto;
+  filter: grayscale(100%) brightness(0.45);
+  transition: filter .35s ease, transform .25s ease;
+}
+
+.sns-youtube img{
+  width: clamp(22px,3vw,26px);
+  margin-top: 1.6px;
+}
+
+.footer-sns a:hover img{
+  filter: grayscale(0%) brightness(1);
+  transform: translateY(-3px);
+}
+
+.footer-copy{
+  font-size: clamp(9px,0.8vw,11px);
+  letter-spacing:.05em;
+  color:#666;
+  opacity:.8;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px){
+    .header-inner{
+    padding: 10px 24px;
+  }
+    .job-hero__inner,
+  .job-body__inner,
+  .footer-inner{
+    padding: 0 90px;
+  }
+
+  .nav-panel a{
+    margin-left: 18px;
+    font-size: 12px;
+  }
+
+  .job-car{
+    right: -10px;
+    /* width: min(520px, 70vw); */
+  }
+}
+
+@media (max-width: 680px){
+  .header-inner{
+    padding: 10px 24px;
+  }
+
+  .logo span{
+    display:none;
+  }
+
+  .nav-panel{
+    gap: 12px;
+  }
+  .nav-panel a{
+    margin-left: 0;
+    font-size: 11px;
+  }
+
+  .job-hero__inner,
+  .job-body__inner,
+  .footer-inner{
+    padding: 0 30px;
+  }
+
+
+
+
+}
