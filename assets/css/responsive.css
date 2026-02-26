@@ -197,7 +197,7 @@
 @media (max-width: 600px) {
   .about-image-wrap img,
   .about-image-wrap .bg-block {
-    max-width: 320px;
+    max-width: 240px;
   }
 }
 
@@ -219,8 +219,12 @@
     padding: 0 clamp(20px, 6vw, 40px);
   }
 
+  .company-title{
+    padding-bottom: 24px;
+  }
+
   .company-image-wrap {
-    max-width: 420px;
+    max-width: 240px;
   }
 
   .company-bg-block {
@@ -320,9 +324,10 @@
   }
 
   .recruit__car{
-    left:-60px;
-    width:24vw;
+    left:-94px;
+    width:39vw;
     opacity:.9;
+    bottom: -120px;
   }
 }
 
@@ -330,7 +335,7 @@
 @media (max-width:600px){
 
   .recruit-media{
-    max-width:320px;
+    max-width:240px;
   }
 
   .recruit-media__bg{
