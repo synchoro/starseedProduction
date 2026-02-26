@@ -253,7 +253,7 @@
 
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 40px 0;
   }
 
   .partners-grid {
@@ -270,22 +270,27 @@
 
   .works-grid {
     grid-template-columns: -1fr;
+    gap: 40px 0;
   }
 
   .partners-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: -1fr;
+  }
+
+    .work-item img {
+    width: 130px;
+    height: 130px;
   }
 }
 
 
-/* 手机端：两列更稳（不挤爆） */
 @media (max-width: 900px){
-  .partners-grid{ grid-template-columns: repeat(2, 1fr); gap: 18px 26px; }
-  .partners-grid img{ max-width: 170px; max-height: 58px; }
+  .partners-grid{ grid-template-columns: repeat(2, 1fr); gap: 18px 0; }
+  .partners-grid img{ max-width: 120px; max-height: 58px; }
 }
 
 @media (max-width: 520px){
-  .partners-grid{ grid-template-columns: 1fr; gap: 14px; }
+  .partners-grid{ grid-template-columns: -1fr; gap: 14px 0; }
 }
 
 
