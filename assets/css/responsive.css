@@ -327,7 +327,7 @@
     left:-94px;
     width:39vw;
     opacity:.9;
-    bottom: -120px;
+    bottom: -150px;
   }
 }
 
@@ -342,6 +342,13 @@
     max-width:320px;
   }
 
+    .recruit__car{
+    left:-94px;
+    width:39vw;
+    opacity:.9;
+    bottom: -135px;
+  }
+
 }
 
 
@@ -353,6 +360,13 @@
 
   .recruit-media__bg{
     max-width:280px;
+  }
+
+      .recruit__car{
+    left:-94px;
+    width:39vw;
+    opacity:.9;
+    bottom: -120px;
   }
 
 }
