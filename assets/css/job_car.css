@@ -171,7 +171,7 @@ body{
 .job-body__inner{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 10.5vw, 210px);
+  padding: 0 clamp(20px, 9.4vw, 210px);
   position: relative;
 }
 
@@ -181,7 +181,7 @@ body{
   margin: 0 auto;
   background: rgba(245,245,245,0.9);
   border-radius: 32px;
-  padding: clamp(26px, 4vw, 44px);
+  padding: clamp(30px, 4vw, 44px) clamp(24px, 4vw, 44px);
   box-shadow: 0 12px 30px rgba(0,0,0,.06);
   position: relative;
   z-index: 1;
