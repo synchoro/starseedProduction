@@ -738,7 +738,7 @@ justify-self: center;
 .deco-film2{
   position: absolute;
   right: 0;
-    bottom: 25%;
+    bottom: 26%;
   transform: translateY(-50%);
   width: clamp(90px, 14vw, 200px);
   height: auto;
@@ -987,7 +987,7 @@ justify-self: center;
 .contact__container{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 10vw, 160px);
+  padding: 0 clamp(16px, 9vw, 160px);
 }
 
 .contact-card{

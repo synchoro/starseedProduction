@@ -175,17 +175,14 @@ body{
   position: relative;
 }
 
-/* 卡片强制居中，不会被装饰图挤 */
 .job-card{
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
-
   background: rgba(245,245,245,0.9);
   border-radius: 32px;
-  padding: clamp(50px, 4vw, 44px);
+  padding: clamp(30px, 4vw, 44px);
   box-shadow: 0 12px 30px rgba(0,0,0,.06);
-
   position: relative;
   z-index: 1;
 }
