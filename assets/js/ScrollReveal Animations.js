@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
 
         const sr = ScrollReveal({
             distance: "100px",
-            duration: 1600,
+            duration: 1800,
             delay: 300,
             easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
             reset: true,
@@ -72,7 +72,7 @@ window.addEventListener("load", () => {
 
 const sr = ScrollReveal({
     distance: "100px",
-    duration: 1600,
+    duration: 1800,
     delay: 300,
     easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
     reset: true,
@@ -93,6 +93,6 @@ sr.reveal(".job-card__content p", {
 sr.reveal(".job-car", {
     origin: "right",
     distance: "120px",
-    duration: 2000,
+    duration: 1800,
     delay: 1200
 });
