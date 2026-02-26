@@ -269,7 +269,7 @@
 @media (max-width: 600px) {
 
   .works-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: -1fr;
   }
 
   .partners-grid {
