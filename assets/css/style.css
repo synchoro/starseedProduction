@@ -17,6 +17,7 @@ html, body {
   height: 100%;
   background: #d5ecf1;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 .container {
@@ -33,6 +34,61 @@ html, body {
 
 #recruit{
   scroll-margin-top: 60px;
+}
+
+
+/* loading画面設定 */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background-color: #fcfcfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 1.5s 2.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loading-logo {
+    opacity: 0;
+    animation: logo_fade 2s .5s forwards;
+    width: 200px;
+}
+
+@keyframes logo_fade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(0);   
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 /* =========================
@@ -271,23 +327,19 @@ html, body {
 ========================= */
 .company {
   background: #d5ecf1;
-  padding-bottom: clamp(72px, 16vh, 160px) 0; /* ※ここはあなたの原文を保持（必要なら後で修正推奨） */
 }
 
 .company-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(16px, 14vw, 160px);
-
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: clamp(24px, 6vw, 80px);
-
-  /* 重要：左右カラムを同じ高さとして扱う */
   align-items: stretch;
 }
 
-/* 左カラム：タイトル固定＋残りで画像を中央へ */
+
 .company-left {
   display: grid;
   grid-template-rows: auto 1fr;

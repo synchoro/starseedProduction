@@ -13,6 +13,7 @@ html, body{
   background:#d5ecf1;
   color:#4a4a4a;
   scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 .container{
@@ -77,23 +78,45 @@ body{
 .nav{ display:flex; align-items:center; }
 .nav-panel{ display:flex; align-items:center; }
 
-.nav-panel a{
+
+
+.header-inner > .nav a {
   margin-left: clamp(14px, 2.4vw, 48px);
   font-size: clamp(11px, 1.05vw, 15px);
-
-  color:#fff;
-  font-weight:700;
-  text-decoration:none;
-
-  opacity:.75;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0.75;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  transition: opacity .35s ease;
-  white-space:nowrap;
+  transition: opacity 0.35s ease;
+  white-space: nowrap;
 }
 
-.nav-panel a:hover{
+.header-inner > .nav a:hover {
   opacity: 1;
 }
+
+/* ハンバーガーボタン（デスクトップでは非表示） */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+}
+
+/* デスクトップでは close を非表示 */
+#nav .nav-close {
+  display: none;
+}
+
 
 /* =========================
    Job hero
